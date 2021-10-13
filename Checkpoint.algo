@@ -1,0 +1,35 @@
+ALGORITHM Checkpoint
+VAR
+    sentence: STRING;
+    sentence_length: INTEGER:=0;
+    number_words: INTEGER:=0;
+    number_vowels: INTEGER:=0;
+    i,j:INTEGER;
+BEGIN
+    Write("write your sentence");
+    Read(sentence);
+    FOR i FROM 0 TO sentence.length-1 STEP step  DO
+        IF (sentence[i]<>" ") THEN
+            sentence_length:=sentence_length+1;
+            IF (sentence[i]="A" OR
+                sentence[i]="E" OR
+                sentence[i]="I" OR
+                sentence[i]="O" OR
+                sentence[i]="U" OR
+                sentence[i]="a" OR
+                sentence[i]="e" OR
+                sentence[i]="i" OR
+                sentence[i]="o" OR
+                sentence[i]="u"  ) THEN
+                number_vowels:=number_vowels+1 
+            END_IF
+        ELSE_IF (i=sentence.length-1) THEN
+            number_words:=number_words+1
+        ELSE
+            number_words:=number_words+1;   
+        END_IF
+    END_FOR
+    Write ("sentence_length= ",sentence_length)
+    Write ("number_words= ",number_words)
+    Write ("number_vowels= ",number_vowels)
+END
